@@ -43,6 +43,43 @@ graph LR
     class note1,note2 notes
 ```
 
+Let me extract the text content from the image:
+
+## URL to Content and Scripts
+
+Key Points:
+◇ Content path extracted from request (URL) to locate resource
+◇ When located sling resource type is extracted
+◇ Locate the script for rendering the content
+
+Path shown in request box:
+`../content/corporate/jobs/developer.html (Request)`
+
+Repository Structure:
+```
+/apps
+/hr
+/jobs
+  /jobs.POST.esp
+  /jobs.esp  
+  /jobs.pdf.esp
+  /jobs.print.esp
+```
+
+Content Structure:
+```
+/content
+/corporate
+/jobs
+/developer.html
+jcr:content:
+  sling:resourceType = hr/jobs
+```
+
+Final Output:
+Rendered Content
+
+The diagram shows the flow from a URL request through content resolution in the repository to final rendered content, with repository paths in orange/brown and content paths in blue colors.
 
 ```mermaid
 graph TD
