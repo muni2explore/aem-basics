@@ -47,3 +47,14 @@ Let me extract the text information from the Java Content Repository image:
 ◇ OSGi Management Console:
 http://localhost:4502/system/console
 
+
+## Core vs Foundation Components
+
+```mermaid
+graph TD
+    WCM[WCM Components] --> |Require v6.3| Core[Core Components]
+    WCM --> Foundation[Foundation Components]
+    
+    Core --> CorePath[/apps/core/wcm/components]
+    Foundation --> FoundationPath[/libs/foundation/components JSP based<br>/libs/wcm/foundation/components HTL and JS based]
+```
