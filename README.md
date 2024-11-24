@@ -52,9 +52,8 @@ http://localhost:4502/system/console
 
 ```mermaid
 graph TD
-    WCM[WCM Components] --> Require v6.3 Core[Core Components]
-    WCM --> Foundation[Foundation Components]
-    
-    Core --> CorePath[/apps/core/wcm/components]
-    Foundation --> FoundationPath[/libs/foundation/components JSP based<br>/libs/wcm/foundation/components HTL and JS based]
+   WCM[WCM Components] --> |Require v6.3| Core[Core Components]
+   WCM --> Foundation[Foundation Components]
+   Core --> CorePath[apps/core/wcm/components]
+   Foundation --> FoundationPath[libs/foundation/components JSP based<br>/libs/wcm/foundation/components HTL and JS based]
 ```
