@@ -52,7 +52,7 @@ http://localhost:4502/system/console
 
 ```mermaid
 graph TD
-    WCM[WCM Components] --> |Require v6.3| Core[Core Components]
+    WCM[WCM Components] --> Require v6.3 Core[Core Components]
     WCM --> Foundation[Foundation Components]
     
     Core --> CorePath[/apps/core/wcm/components]
