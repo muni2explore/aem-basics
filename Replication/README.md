@@ -23,3 +23,22 @@
     C --> D[Sling.resourceType] 
 ```
 
+
+
+```mermaid
+graph LR
+    %% Adding a note at the top
+    subgraph Process Flow
+        note1[Processing is driven by URL of the user request]
+        note2[Content to be displayed by the appropriate scripts]
+    end
+
+    %% Main flow
+    A[URL] -->|Process| B[Content]
+    B -->|Display| C[Properties + Script]
+
+    %% Styling
+    classDef default fill:#fff,stroke:#d46536,stroke-width:2px
+    classDef notes fill:none,stroke:none
+    class note1,note2 notes
+```
