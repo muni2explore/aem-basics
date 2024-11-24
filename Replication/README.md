@@ -42,3 +42,42 @@ graph LR
     classDef notes fill:none,stroke:none
     class note1,note2 notes
 ```
+
+
+```mermaid
+graph TD
+    A["../content/corporate/jobs/developer.html (Request)"]
+
+    subgraph "Repository"
+        B["/apps"]
+        C["/hr"]
+        D["/jobs"]
+        D1["/jobs.POST.esp"]
+        D2["/jobs.esp"]
+        D3["/jobs.pdf.esp"]
+        D4["/jobs.print.esp"]
+
+        B --> C
+        C --> D
+        D --> D1
+        D --> D2
+        D --> D3
+        D --> D4
+    end
+
+    subgraph "Content Path"
+        E["/content"]
+        F["/corporate"]
+        G["/jobs"]
+        H["/developer.html"]
+        I["jcr:content:<br>sling:resourceType = hr/jobs"]
+
+        E --> F
+        F --> G
+        G --> H
+        H --> I
+    end
+
+    J["Rendered Content"]
+    I --> J
+```
