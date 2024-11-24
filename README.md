@@ -57,3 +57,14 @@ graph TD
    Core --> CorePath[apps/core/wcm/components]
    Foundation --> FoundationPath[libs/foundation/components JSP based<br>/libs/wcm/foundation/components HTL and JS based]
 ```
+
+# Core vs Foundation Components
+
+| Feature | Core | Foundation |
+|---------|------|------------|
+| Markup | HTL | JSP code |
+| Dialog Definition | Coral 3 | Coral2 + Classic UI |
+| Apache License | Apache License | Proprietary of Adobe |
+| Implementation | Java POJOs with Sling Models annotations | Implementation: JSP code |
+| Delivery | Delivered in and through GitHub: https://github.com/Adobe-Marketing-Cloud/aem-core-wcm-components | Delivery is via QuickStart |
+| Technology used | Sling Models, HTL, Touch UI etc. | JavaScript Use-API, JSP, Classic UI |
