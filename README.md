@@ -33,3 +33,17 @@ Let me extract the text information from the Java Content Repository image:
 
 ◇ Mongo DB for high performance & clustered applications and TAR used by default
 
+
+## OSGi
+
+◇ Fundamental layer of AEM Stack
+
+◇ OSGi application is a collection of bundles that interact using service interfaces
+
+◇ OSGi bundles can contain compiled Java code, scripts, content that is to be loaded in the repository, and configuration or additional files
+
+◇ Bundles may be independently developed and deployed
+
+◇ OSGi Management Console:
+http://localhost:4502/system/console
+
