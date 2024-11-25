@@ -82,9 +82,9 @@ This structure allows for organized management and configuration of client-side 
 ```mermaid
 graph TD
     subgraph Dependencies
-        depA[/etc/clientlibs/depA<br>categories=["depA"]]
-        depB[/etc/clientlibs/depB<br>categories=["depB"]]
-        depC[/etc/clientlibs/depC<br>categories=["depC"]]
+        depA[etc/clientlibs/depA<br>categories=["depA"]]
+        depB[etc/clientlibs/depB<br>categories=["depB"]]
+        depC[etc/clientlibs/depC<br>categories=["depC"]]
     end
     
     subgraph Usage Libraries
