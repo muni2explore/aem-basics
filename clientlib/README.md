@@ -88,8 +88,8 @@ graph TD
     end
     
     subgraph Usage Libraries
-        useA[/etc/clientlibs/useA<br>categories=["useA"]<br>dependencies=["depA", "depB"]]
-        useB[/etc/clientlibs/useB<br>categories=["useB"]<br>embed=["depB", "depC"]]
+        useA[etc/clientlibs/useA<br>categories=["useA"]<br>dependencies=["depA", "depB"]]
+        useB[etc/clientlibs/useB<br>categories=["useB"]<br>embed=["depB", "depC"]]
     end
     
     useA --> depA
