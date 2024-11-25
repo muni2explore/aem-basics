@@ -107,6 +107,40 @@ graph TD
    - Single HTML request: useB
    - Contents: concatenation of depB, depC, useB
 
+
+# Debugging Client Libraries
+
+```mermaid
+graph TB
+    subgraph Debugging Tools
+        A[Dump Libs] --> D[List all registered<br>client libraries]
+        B[Test Output] --> E[View expected HTML<br>output by category]
+        C[Dependencies Validation] --> F[Highlight missing<br>dependencies/embeds]
+        G[Rebuild Client Libraries] --> H[Force rebuild/<br>invalidate cache]
+    end
+```
+
+## Available Tools
+
+1. **Dump Libs**
+   - Purpose: Lists all client libraries registered in AEM
+   - URL: `http://localhost:4502/libs/granite/ui/content/dumplibs.html`
+
+2. **Test Output**
+   - Purpose: Shows expected HTML output of clientlib includes by category
+   - URL: `http://localhost:4502/libs/granite/ui/content/dumplibs.test.html`
+
+3. **Libraries Dependencies Validation**
+   - Purpose: Highlights missing dependencies or embedded categories
+   - URL: `http://localhost:4502/libs/granite/ui/content/dumplibs.validate.html`
+
+4. **Rebuild Client Libraries**
+   - Purpose: Forces AEM to rebuild libraries or invalidate cache
+   - Best Practices:
+     - Particularly useful when developing with LESS
+     - Generally more effective to invalidate caches and refresh versus full rebuild
+   - URL: `http://localhost:4502/libs/granite/ui/content/dumplibs.rebuild.html`
+
 # Using Client-side Libraries - The Solution
 
 ```mermaid
