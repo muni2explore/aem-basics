@@ -81,21 +81,21 @@ This structure allows for organized management and configuration of client-side 
 
 ```mermaid
 graph TD
-    subgraph Dependencies
-        depA[etc/clientlibs/depA<br>categories=["depA"]]
-        depB[etc/clientlibs/depB<br>categories=["depB"]]
-        depC[etc/clientlibs/depC<br>categories=["depC"]]
-    end
-    
-    subgraph Usage Libraries
-        useA[etc/clientlibs/useA<br>categories=["useA"]<br>dependencies=["depA", "depB"]]
-        useB[etc/clientlibs/useB<br>categories=["useB"]<br>embed=["depB", "depC"]]
-    end
-    
-    useA --> depA
-    useA --> depB
-    useB --> |embeds| depB
-    useB --> |embeds| depC
+   subgraph Dependencies
+       depA["depA<br>categories=['depA']"]
+       depB["depB<br>categories=['depB']"]
+       depC["depC<br>categories=['depC']"]
+   end
+   
+   subgraph Usage Libraries
+       useA["useA<br>categories=['useA']<br>dependencies=['depA','depB']"]
+       useB["useB<br>categories=['useB']<br>embed=['depB','depC']"]
+   end
+   
+   useA --> depA
+   useA --> depB
+   useB -.->|embeds| depB
+   useB -.->|embeds| depC
 ```
 
 ### Usage Scenarios:
