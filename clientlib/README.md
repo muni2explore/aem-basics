@@ -45,6 +45,68 @@ graph TD
 This approach provides better organization and optimization of client-side resources compared to traditional direct inclusion.
 
 
+# How Client Libraries work?
+
+```mermaid
+graph TD
+    A[cq:ClientLibraryFolder] --> B[Properties Configuration]
+    B --> C[categories]
+    B --> D[dependencies]
+    B --> E[embed]
+    A --> F[Content]
+    F --> G[JS files]
+    F --> H[CSS files]
+    F --> I[Supporting files]
+```
+
+Each cq:ClientLibraryFolder is populated with:
+- JS and/or CSS files 
+- Supporting files
+- Configuration properties:
+  - categories
+  - dependencies
+  - embed
+
+This structure allows for organized management and configuration of client-side resources in AEM.
+
+
+# Properties of Client Libraries
+
+## Key Properties
+- **categories**: list of identifiers to publish a clientlib under
+- **dependencies**: causes extra requests to other clientlibs (external "subscribe")
+- **embed**: "aggregates" other clientlibs INTO the current clientlib (internal subscribe)
+
+## Example Implementation
+
+```mermaid
+graph TD
+    subgraph Dependencies
+        depA[/etc/clientlibs/depA<br>categories=["depA"]]
+        depB[/etc/clientlibs/depB<br>categories=["depB"]]
+        depC[/etc/clientlibs/depC<br>categories=["depC"]]
+    end
+    
+    subgraph Usage Libraries
+        useA[/etc/clientlibs/useA<br>categories=["useA"]<br>dependencies=["depA", "depB"]]
+        useB[/etc/clientlibs/useB<br>categories=["useB"]<br>embed=["depB", "depC"]]
+    end
+    
+    useA --> depA
+    useA --> depB
+    useB --> |embeds| depB
+    useB --> |embeds| depC
+```
+
+### Usage Scenarios:
+1. When using "useA" (`<cq:includeClientLib categories="useA"/>`):
+   - HTML requests: depA, depB, useA
+   - Accessed via: /etc/clientlibs/depA.css etc.
+
+2. When using "useB" (`<cq:includeClientLib categories="useB"/>`):
+   - Single HTML request: useB
+   - Contents: concatenation of depB, depC, useB
+
 # Using Client-side Libraries - The Solution
 
 ```mermaid
